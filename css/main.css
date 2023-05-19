@@ -1,0 +1,34 @@
+body {
+    /* Variables for colors */
+    --mainbg: hsla(0, 33%, 96%, 1);
+    --accentcolor: rgba(229, 124, 35, 1);
+    --headerbg: #025464;
+    --headcolor1: #F37335;
+    --headcolor2: #E8AA42;
+    --imgaccent: #faf3ca;
+
+    background-color:var(--mainbg); width:80vw; margin:5vh auto; border-radius:10px; overflow-x: hidden;
+}
+
+#pictures { display:flex; justify-content: center; gap:1.5vw; background-color: var(--headerbg); width:60vw; padding:1em; border-radius:10px; }
+#pictures img:first-child, #pictures img:last-child { border:3px solid var(--mainbg); }
+#pictures img { transition:all .5s; }
+#pictures img:hover { filter: grayscale(100%); -webkit-filter: grayscale(100%); }
+header { display:flex; align-items: center; justify-content: space-between; padding: 0 5vw; background-color:var(--headerbg); border-radius:10px 10px 0 0; }
+h1 { font-family:Righteous; font-size:2vw; text-transform:uppercase; color:var(--mainbg); flex-grow: 1; }
+nav { color:var(--accentcolor); }
+nav a { font-family:Nunito; text-decoration:none; color:var(--mainbg); margin:0 1vw; transition:all .5s; }
+nav a:hover, nav a:focus, nav a:active { color:var(--headcolor1); }
+section { width:60vw; margin:auto; font-family:Nunito; }
+section p::first-letter { font-size:1.3em; font-weight:700; padding-left:1vw; color:var(--accentcolor); }
+footer { background-color: var(--headerbg); font-family:Nunito; color:var(--mainbg); border-radius:0 0 10px 10px; }
+footer h3 { text-align:center; font-family:Righteous; text-transform:uppercase; padding:1em; }
+footer p { font-style:italic; text-align:center; padding-bottom:1em; }
+article h2 span { background: -webkit-linear-gradient(0deg, var(--headcolor1) 0%, var(--headcolor2) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+article:nth-of-type(2) h2 span { background: -webkit-linear-gradient(0deg, var(--headcolor2) 0%, var(--headcolor1) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+video { object-fit: cover; width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; }
+.viewport-header { position: relative;  }
+.full-width { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
+figure img { max-width:100%; }
+#dinner { width:60vw; margin:auto; }
