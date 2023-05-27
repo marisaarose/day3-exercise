@@ -43,3 +43,102 @@ video { object-fit: cover; width: 100vw; height: 100vh; position: fixed; top: 0;
 .full-width { width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; }
 figure img { max-width:100%; }
 #dinner { width:60vw; margin:auto; }
+
+/* Animation */
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: translateY(-4rem) scale(.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes sheen {
+    100% {
+        transform: rotateZ(60deg) translate(1em, -9em);
+    }
+}
+@keyframes star {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(-0.75em);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    89% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateZ(-1000em);
+    }
+}
+@keyframes wars {
+    0% {
+        opacity: 0;
+        transform: scale(1.5) translateY(0.5em);
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateZ(-1000em);
+    }
+}
+@keyframes spin-letters {
+
+    0%,
+    10% {
+        opacity: 0;
+        transform: rotateY(90deg);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70%,
+    86% {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+
+    95%,
+    100% {
+        opacity: 0;
+    }
+}
+.animate-pop-in { animation: pop-in .6s cubic-bezier(0, 0.9, 0.3, 1.2) forwards; opacity: 0; }
+.logo { animation-delay:.6s; }
+.header-title { animation-delay:.8s; }
+button { background: var(--headcolor1); color: #fff; font-size: 14px; border-radius: 0.5em; padding: 0 1em; position: relative; overflow: hidden; line-height: 32px; border:none; height: 3em; line-height:2em; transition:all 0.5s cubic-bezier(0.67, -0.51, 0.42, 1.43); }
+button:hover { cursor:pointer; }
+button::after { content: ''; position: absolute; top: -50%; right: -50%; bottom: -50%; left: -50%; background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0)); transform: rotateZ(60deg) translate(-5em, 7.5em); }
+button:hover::after, button:focus::after { animation: sheen 1s forwards; }
+button a { color:white; text-decoration: none; }
+button a:hover, button a:active, button a:visited { color:white; }
+.star { animation: star 10s ease-out infinite; }
+.wars { animation: wars 10s ease-out infinite; }
+.starwars-demo { perspective: 800px; transform-style: preserve3d; height:17em; left:50%; position:absolute; top:53%; transform:translate(-50%, -50%); width:34em; }
+.byline span { animation: spin-letters 10s linear infinite; display:inline-block; }
+.byline { animation: move-byline 10s linear infinite; font-family:"Bruno Ace SC"; color:white; font-size:1.75em; left:-4em; letter-spacing:0.4em; text-align:center; text-transform:uppercase; top:29%; }
+.star, .wars, .byline { position:absolute; }
+.star { top:-0.75em; }
+.wars { bottom:-0.5em; }
